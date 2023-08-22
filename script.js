@@ -25,7 +25,16 @@ function startBtnClicked() {
   clearInterval(invertColorInterval);
 
   // Controls the playerHandOptions animations
-  playerHandOptionsDiv.classList.add("player-hand-options-animation-trigger");
+  let topPercent = 99;
+  function playerHandOptionsAnimation() {
+    if (topPercent !== 34) {
+      playerHandOptionsDiv.style.top = `${topPercent}%`;
+      topPercent -= 0.5;
+    } else {
+      clearAnimationInterval();
+    }
+  }
+  const playerHandOptionsAnimationInterval = setInterval(playerHandOptionsAnimation, 13);
   function clearAnimationInterval() {
     clearInterval(playerHandOptionsAnimationInterval);
     playerHandOptionsAnimationStopSound.play();
