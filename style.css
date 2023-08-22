@@ -97,11 +97,11 @@ img {
   justify-content: center;
   width: 330px;
   position: fixed;
-  top: 35%;
+  transition: top 1s;
+  top: 100%; 
 }
-.player-hand-options-animation {
-  transition: top 3s;
-  top: 100%;
+.player-hand-options-animation-trigger {
+  top: 35% !important;
 }
 #player-hand-options button {
   border-radius: 20px;

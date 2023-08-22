@@ -25,18 +25,7 @@ function startBtnClicked() {
   clearInterval(invertColorInterval);
 
   // Controls the playerHandOptions animations
-  // let topPercent = 99;
-  // function playerHandOptionsAnimation() {
-  //   if (topPercent !== 34) {
-  //     playerHandOptionsDiv.style.top = `${topPercent}%`;
-  //     topPercent -= 0.5;
-  //   } else {
-  //     clearAnimationInterval();
-  //   }
-  // }
-  // const playerHandOptionsAnimationInterval = setInterval(playerHandOptionsAnimation, 13);
-  playerHandOptionsDiv.style.removeProperty('top');
-  playerHandOptionsDiv.classList.add("player-hand-options-animation");
+  playerHandOptionsDiv.classList.add("player-hand-options-animation-trigger");
   function clearAnimationInterval() {
     clearInterval(playerHandOptionsAnimationInterval);
     playerHandOptionsAnimationStopSound.play();
