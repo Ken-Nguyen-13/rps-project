@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <audio autoplay src="color-change-sound.mp3" id="color-change-sound">
+        Sound Not Playing
+      </audio>
+      <div id="main-page">
+        <h1 id="header">ROCK, PAPER, SCISSORS!</h1>
+        <div id="start-button-container">
+          <button id="start-button" onclick="startBtnClicked()"></button>
+        </div>
+      </div>
+      <div id="game-page" class="notVisible">
+        <div id="scorebar">
+          <span id="player-score-container">
+            <h2>Your Score:</h2>
+            <p id="player-score">0</p>
+          </span>
+          <span id="computer-score-container">
+            <h2>Computers Score:</h2>
+            <p id="computer-score">0</p>
+          </span>
+        </div>
+        <div id="game-page-main">
+          <div id="player-hands">
+            <img src="rock_hand.png" id="player-hand" />
+            <hr />
+            <img src="rock_hand.png" id="computer-hand" />
+          </div>
+          <div id="player-hand-options">
+            <button id="rock-hand"></button>
+            <button id="paper-hand"></button>
+            <button id="scissor-hand"></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
