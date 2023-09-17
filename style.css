@@ -36,6 +36,7 @@ main {
   background-size: cover;
   width: 310px;
   height: 100px;
+  border: 2px solid black;
 }
 #game-page {
   width: 100%;
@@ -90,13 +91,37 @@ img {
   display: flex;
   height: 100%;
 }
+/* #fixed-btns {
+  position: fixed;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+} */
+#new-game-btn {
+  display: flex;
+  align-self: center;
+  top: 50%;
+  position: fixed;
+  border: none;
+  width: 344px;
+  height: 82px;
+  background-size: cover;
+  background-image: url("new-game-button-pixel.png");
+  transition-timing-function: ease-in ;
+  transition: width 1s, height 1s, transform 1s;
+}
+#new-game-btn:active {
+  background-image: url("new-game-button-pixel-btn-pressed.png");
+}
 #player-hand-options {
   display: flex;
   align-self: center;
   flex-wrap: wrap;
   justify-content: center;
-  width: 330px;
+  width: 380px;
   position: fixed;
+  transition-property: top;
+  transition-duration: 1s;
   top: 100%; 
 }
 #player-hand-options button {
@@ -107,6 +132,16 @@ img {
   border: 3px solid black;
   background-size: cover;
   margin: 5px;
+  transition: width 0.3s, height 0.3s;
+}
+#player-hand-options button:hover {
+  width: 175px;
+  height: 175px;
+}
+#player-hand-options button:active {
+  transition: width 0.15s, height 0.15s;
+  width: 150px;
+  height: 150px;
 }
 #rock-hand {
   background-image: url(rock-pixel-art.png);

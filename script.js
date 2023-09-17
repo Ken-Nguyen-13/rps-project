@@ -1,11 +1,10 @@
 const startBtn = document.getElementById("start-button");
 const mainPage = document.getElementById("main-page");
 const gamePage = document.getElementById("game-page");
-const btnClickSound = new Audio("btn-click-sound.mp3");
+const startBtnClickSound = new Audio("start-btn-clicked-sound.mp3");
 const playerHandOptionsDiv = document.getElementById("player-hand-options");
-const playerHandOptionsAnimationStopSound = new Audio(
-  "player-hand-options-animation-stop-sound.mp3"
-);
+const newGameBtn = document.getElementById("new-game-btn");
+const newGameBtnClickSound = new Audio("new-game-btn-clicked-sound.mp3");
 
 function invertColor() {
   if (startBtn.style.backgroundImage === 'url("start_button.png")') {
@@ -21,23 +20,25 @@ const invertColorInterval = setInterval(invertColor, 500);
 function startBtnClicked() {
   mainPage.style.display = "none";
   gamePage.classList.remove("notVisible");
-  btnClickSound.play();
+  startBtnClickSound.play();
   clearInterval(invertColorInterval);
-
-  // Controls the playerHandOptions animations
-  let topPercent = 99;
-  function playerHandOptionsAnimation() {
-    if (topPercent !== 34) {
-      playerHandOptionsDiv.style.top = `${topPercent}%`;
-      topPercent -= 0.5;
-    } else {
-      clearAnimationInterval();
-    }
-  }
-  const playerHandOptionsAnimationInterval = setInterval(playerHandOptionsAnimation, 13);
-  function clearAnimationInterval() {
-    clearInterval(playerHandOptionsAnimationInterval);
-    playerHandOptionsAnimationStopSound.play();
+}
+function playBtnClickSound() {
+  newGameBtnClickSound.play();
+}
+function playerHandOptionsAnimation(topValue) {
+  newGameBtnClickSound.play()
+  for (let i = topValue - 1; i < topValue + 1; i++) {
+    playerHandOptionsDiv.style.top = `${i}%`;
   }
 }
-//startBtnClicked();
+function newBtnClickedAnimation() {
+  newGameBtn.style.width = "0";
+  newGameBtn.style.height = "0";
+  newGameBtn.style.transform = "rotate(360deg)";
+  setTimeout(function () {
+    newGameBtn.style.visibility = "hidden";
+    newGameBtn.style.width = "344px";
+    newGameBtn.style.height = "82px";
+  }, 900);
+}

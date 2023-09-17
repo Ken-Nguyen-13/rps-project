@@ -40,11 +40,14 @@
             <hr />
             <img src="rock_hand.png" id="computer-hand" />
           </div>
-          <div id="player-hand-options">
-            <button id="rock-hand"></button>
-            <button id="paper-hand"></button>
-            <button id="scissor-hand"></button>
-          </div>
+          <!-- <div id="fixed-btns"> -->
+            <button id="new-game-btn" onclick="playerHandOptionsAnimation(35)" onmousedown="playBtnClickSound()" onmouseup="newBtnClickedAnimation()"></button>
+            <div id="player-hand-options">
+              <button id="rock-hand" onclick="playerHandOptionsAnimation(100)"></button>
+              <button id="paper-hand" onclick="playerHandOptionsAnimation(100)"></button>
+              <button id="scissor-hand" onclick="playerHandOptionsAnimation(100)"></button>
+            </div>
+          <!-- </div> -->
         </div>
       </div>
     </main>
