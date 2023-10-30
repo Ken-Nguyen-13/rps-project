@@ -51,7 +51,8 @@ main {
   height: 100px;
 }
 #computer-score-container,
-#player-score-container {
+#player-score-container,
+#game-counter-container {
   display: flex;
   align-items: center;
   margin: auto 70px;
@@ -63,20 +64,28 @@ h2 {
   margin: 0;
 }
 #computer-score,
-#player-score {
+#player-score,
+#game-counter {
   font-size: 50px;
   font-weight: bolder;
   height: 100%;
   margin: auto 10px;
+}
+#computer-score-container {
+  margin-left: 0;
+}
+#game-counter-container {
+  margin-right: 20px;
 }
 hr {
   width: 5px;
   background-color: black;
 }
 img {
-  align-self: center;
+  margin-top: 200px;
   width: 430px;
   height: 250px;
+  transition: margin-top 0.4s;
 }
 #computer-hand {
   transform: scalex(-1);
@@ -91,12 +100,6 @@ img {
   display: flex;
   height: 100%;
 }
-/* #fixed-btns {
-  position: fixed;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-} */
 #new-game-btn {
   display: flex;
   align-self: center;
@@ -107,8 +110,9 @@ img {
   height: 82px;
   background-size: cover;
   background-image: url("new-game-button-pixel.png");
-  transition-timing-function: ease-in ;
-  transition: width 1s, height 1s, transform 1s;
+  transition-timing-function: ease-in;
+  visibility: visible;
+  transition: width 1s, height 1s, transform 1s, visibility 1s;
 }
 #new-game-btn:active {
   background-image: url("new-game-button-pixel-btn-pressed.png");
@@ -122,7 +126,7 @@ img {
   position: fixed;
   transition-property: top;
   transition-duration: 1s;
-  top: 100%; 
+  top: 100%;
 }
 #player-hand-options button {
   border-radius: 20px;
